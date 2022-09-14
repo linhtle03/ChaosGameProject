@@ -1,6 +1,7 @@
 // Include important C++ libraries here
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include <cmath>
 
 // Make code easier to type with "using namespace"
 using namespace sf;
@@ -12,8 +13,9 @@ int main()
 	VideoMode vm(1920, 1080);
 
 	// Create and open a window for the game
+	RenderWindow window(vm, "Sierpinski Triangle", Style::Default);
 
-	RenderWindow window(vm, "Chaos Triangle", Style::Default);
+	bool paused = true;
 
     // Draw some text
     Text messageText;
@@ -45,8 +47,16 @@ int main()
 
 	Vector2f clicked;
 
+	
     while (window.isOpen())
 	{
+
+		if (paused)
+		{
+			// Draw our message
+			window.draw(messageText);
+			window.display();
+		}
 		/*
 		****************************************
 		Handle the players input
@@ -61,6 +71,7 @@ int main()
 			}
 			if (event.type == sf::Event::MouseButtonPressed)
 			{
+				paused = false;
 				if (event.mouseButton.button == sf::Mouse::Left)
 				{
 					std::cout << "the left button was pressed" << std::endl;
@@ -98,14 +109,6 @@ int main()
 		// Draw our game scene here
 		window.draw(rect);
 		window.display();
-
-		while (event.type != sf::Event::MouseButtonPressed)
-	{
-    	// Draw our message
-    	window.draw(messageText);
-    	window.display();
-	}
-
 
     }
 	
