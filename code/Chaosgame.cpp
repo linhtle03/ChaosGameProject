@@ -40,7 +40,9 @@ int main()
         textRect.height / 2.0f);
     messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
         
-	RectangleShape rect(Vector2f{20,10});
+	CircleShape cir(10);
+	cir.setRadius(4);
+
 
 	vector<Vector2f> vertices;   ///push_back stuff into us!
 	vector<Vector2f> points;
@@ -95,8 +97,8 @@ int main()
 		Update the scene
 		****************************************
 		*/
-		rect.setPosition(clicked.x, clicked.y);
-		rect.setFillColor(Color::White);
+		cir.setPosition(clicked.x, clicked.y);
+		cir.setFillColor(Color::White);
 		/*
 		****************************************
 		Draw the scene
@@ -107,12 +109,10 @@ int main()
 		// Clear everything from the last run frame
 		window.clear();
 		// Draw our game scene here
-		window.draw(rect);
+		window.draw(cir);
 		window.display();
 
     }
 	
 	return 0;
 }
-
-
