@@ -13,9 +13,8 @@ int main()
 
 	// Create and open a window for the game
 
-	RenderWindow window(vm, "Triangle", Style::Default);
+	RenderWindow window(vm, "Chaos Triangle", Style::Default);
 
-	bool paused = true;
     // Draw some text
     Text messageText;
     // We need to choose a font
@@ -24,7 +23,7 @@ int main()
     // Set the font to our message
     messageText.setFont(font);
     // Assign the actual message
-    messageText.setString("Click to start");
+    messageText.setString("Please click the first vertex to start");
     // Make it really big
     messageText.setCharacterSize(75);
 
@@ -39,12 +38,12 @@ int main()
         textRect.height / 2.0f);
     messageText.setPosition(1920 / 2.0f, 1080 / 2.0f);
         
-    if (paused) {
-       // Draw our message
-       window.draw(messageText);
-    }
-    window.display();
-	
+    while (window.isOpen())
+	{
+    	// Draw our message
+    	window.draw(messageText);
+    	window.display();
+	}
 	RectangleShape rect(Vector2f{20,10});
 
 	vector<Vector2f> vertices;   ///push_back stuff into us!
@@ -108,6 +107,7 @@ int main()
 
 
     }
+	
 	return 0;
 }
 
