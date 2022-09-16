@@ -126,14 +126,14 @@ int main()
         x1 = 100.0;
         y1 = 300.0;
 
-        x2 = 600.0;
-        y2 = 300.0;
+        x2 = clicked.x;
+        y2 = clicked.y;
 
-        x3 = 350.0;
+        x3 = 1000.0;
         y3 = 10.0;
 
-        x4 = clicked.x;
-        y4 = clicked.y;
+        x4 = 350.0;
+        y4 = 250.0;
         }
 
         // Use to hold points if needed
