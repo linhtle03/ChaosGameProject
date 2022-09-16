@@ -110,17 +110,19 @@ int main()
 				paused = false;
 				if (event.mouseButton.button == sf::Mouse::Left)
 				{
+                    cout << "X:" << event.mouseButton.x << endl;
+                    cout <<"Y:" << event.mouseButton.y << endl;
+                    cout << " " << endl;
 					clicked.x = event.mouseButton.x;
 					clicked.y = event.mouseButton.y;
 				}
 			}
     
 		}
-	if (event.type == sf::Event::MouseButtonPressed)
-    {
         int x1, x2, x3, x4;
         int y1, y2, y3, y4;
-
+    if (event.mouseButton.button == sf::Mouse::Left)
+		{
         x1 = 100.0;
         y1 = 300.0;
 
@@ -132,6 +134,7 @@ int main()
 
         x4 = 350.0;
         y4 = 250.0;
+        }
 
         // Use to hold points if needed
         float* cordsX = new float[100];
@@ -227,7 +230,7 @@ int main()
 
         window.display();
 
-    }
+    
     }
 	
 	return 0;
