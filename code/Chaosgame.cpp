@@ -132,8 +132,8 @@ int main()
         x3 = 350.0;
         y3 = 10.0;
 
-        x4 = 350.0;
-        y4 = 250.0;
+        x4 = clicked.x;
+        y4 = clicked.y;
         }
 
         // Use to hold points if needed
